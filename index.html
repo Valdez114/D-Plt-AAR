@@ -3,21 +3,43 @@
 	<head>
 		<title>D Platoon AAR Generator</title>
         <style>
-			body {font-family: Arial;}
+			body {font-family: Calibri;}
 		</style>
    	</head>
    	<body>
-      	<form>
-         	<label for="start"><b>Start of Deployment:</b></label><br>
-         	<input type="time" id="start" name="start"><br><br>
-         	<label for="end"><b>End of Deployment:</b></label><br>
-         	<input type="time" id="end" name="end"><br><br>
-         	<label for="area"><b>Area of Operation:</b></label><br>
-         	<input type="text" id="area" name="area"><br><br>
-            <input type="submit" value="Submit">
-      	</form>
-        <br>
-		<a href="https://police.lsgov.us/viewforum.php?f=1052">Post Here</a>
+   		<label for="starttime"><b>START TIME:</b></label>
+        <input type="time" id="starttime" name="starttime">
+    	
+        <br><br>
+        
+ 		<label for="endtime"><b>END TIME:</b></label>
+        <input type="time" id="endtime" name="endtime">
+        
+        <br><br>
+        
+        <label for="area"><b>AREA:</b></label>
+        <input type="text" id="area" name="area">
+        
+        <br><br>
+        
+        <label for="narrative"><b>NARRATIVE:</b></label><br>
+
+        <textarea id="narrative" name="narrative" rows="10" cols="100" placeholder="Enter the deployment narrative here..."></textarea><br><br>
+      
+        <button onclick="generate()">Generate</button>
+    	
+        <p id="format"></p>
+        
+        <script>
+        	function generate() {
+				var starttime = document.getElementById("starttime").value;
+                var endtime = document.getElementById("endtime").value;
+                var area = document.getElementById("area").value;
+                var narrative = document.getElementById("narrative").value;
+                document.getElementById("format").innerHTML = starttime + " " + endtime + " " + area + " " + narrative; 
+        	}
+        </script>
    	</body>
 </html>
+
 
