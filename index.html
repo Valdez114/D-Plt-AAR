@@ -102,6 +102,11 @@
         <textarea id="narrative" rows="10" cols="91" placeholder="Enter the deployment narrative here..."></textarea><br><br>
       
         <button onclick="generate()">Generate</button>
+        
+        <br><br>
+        
+        <textarea rows="4" cols="91" onclick="this.select();">format
+    	</textarea>
     	
         <p id="format"></p>
         <p id="test"></p>
@@ -112,7 +117,13 @@
                 var endtime = document.getElementById("endtime").value;
                 var area = document.getElementById("area").value;
                 var narrative = document.getElementById("narrative").value;
-                document.getElementById("format").innerHTML = starttime + " " + endtime + " " + area + " " + narrative; 
+                
+                document.getElementById("format").innerHTML = "[font=Public Sans][center][size=95][b]D PLATOON – AFTER ACTION REPORT[/b][/size]";
+
+                
+                
+                
+                // starttime + " " + endtime + " " + area + " "+ narrative;
                 
             	// Get all checkboxes
             	var checkboxes = document.querySelectorAll('input[type="checkbox"]');
@@ -127,7 +138,9 @@
 
             	// Display the selected personnel
             	var resultDiv = document.getElementById('test');
-				resultDiv.innerHTML = "Selected Personnel: " + selectedPersonnel.join(", ");
+				resultDiv.innerHTML = selectedPersonnel.join(" ");
+                
+
         	}
         </script>
    	</body>
