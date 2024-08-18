@@ -3,41 +3,76 @@
 	<head>
 		<title>D Platoon AAR Generator</title>
         <style>
-		body {font-family: Calibri;}
-	</style>
+			body {font-family: Calibri;}
+		</style>
    	</head>
    	<body>
    		<label for="starttime"><b>START TIME:</b></label>
-        	<input type="time" id="starttime" name="starttime">
+        <input type="time" id="starttime">
     	
-        	<br><br>
+        <br><br>
         
  		<label for="endtime"><b>END TIME:</b></label>
-       		<input type="time" id="endtime" name="endtime">
+        <input type="time" id="endtime">
         
-        	<br><br>
+        <br><br>
         
-        	<label for="area"><b>AREA:</b></label>
-        	<input type="text" id="area" name="area">
+        <label for="area"><b>AREA:</b></label>
+        <input type="text" id="area">
         
-        	<br><br>
+        <br>
         
-        	<label for="narrative"><b>NARRATIVE:</b></label><br>
-        	<textarea id="narrative" name="narrative" rows="10" cols="100" placeholder="Enter the deployment narrative here..."></textarea><br><br>
+        <p><b>PERSONNEL:</b></p>
+        <input type="checkbox" id="10D" name="personnel" value="[*] J. Valdez">
+        <label for="10D">Jake Valdez</label><br>
+        <input type="checkbox" id="11D" name="personnel" value="[*] A. Vega">
+        <label for="11D">Alejandro Vega</label><br>
+        <input type="checkbox" id="20D" name="personnel" value="[*] R. Spear">
+        <label for="20D">Richard Spear</label><br>
+        <input type="checkbox" id="21D" name="personnel" value="[*] E. Perez">
+        <label for="21D">Eduardo Perez</label><br>
+        <input type="checkbox" id="30D" name="personnel" value="[*] R. Malloy">
+        <label for="30D">Ronald Malloy</label><br>
+        <input type="checkbox" id="41D" name="personnel" value="[*] I. Gilbert">
+        <label for="41D">Isaac Gilbert</label><br>
+        <input type="checkbox" id="42D" name="personnel" value="[*] J. Kaminski">
+        <label for="42D">Joel Kaminski</label><br>
+
+        <br><br>
+        
+        <label for="narrative"><b>NARRATIVE:</b></label><br>
+
+        <textarea id="narrative" rows="10" cols="100" placeholder="Enter the deployment narrative here..."></textarea><br><br>
       
-        	<button onclick="generate()">Generate</button>
+        <button onclick="generate()">Generate</button>
     	
-        	<p id="format"></p>
+        <p id="format"></p>
+        <p id="test"></p>
         
-        	<script>
-        		function generate() {
-			var starttime = document.getElementById("starttime").value;
-                	var endtime = document.getElementById("endtime").value;
-                	var area = document.getElementById("area").value;
-                	var narrative = document.getElementById("narrative").value;
-                	document.getElementById("format").innerHTML = starttime + " " + endtime + " " + area + " " + narrative; 
-        		}
-        	</script>
+        <script>
+        	function generate() {
+				var starttime = document.getElementById("starttime").value;
+                var endtime = document.getElementById("endtime").value;
+                var area = document.getElementById("area").value;
+                var narrative = document.getElementById("narrative").value;
+                document.getElementById("format").innerHTML = starttime + " " + endtime + " " + area + " " + narrative; 
+                
+            	// Get all checkboxes
+            	var checkboxes = document.querySelectorAll('input[type="checkbox"]');
+            	var selectedPersonnel = [];
+
+            	// Loop through checkboxes and check if they are selected
+            	checkboxes.forEach(function(checkbox) {
+                if (checkbox.checked) {
+                    selectedPersonnel.push(checkbox.value);
+                	}
+            	});
+
+            	// Display the selected personnel
+            	var resultDiv = document.getElementById('test');
+				resultDiv.innerHTML = "Selected Personnel: " + selectedPersonnel.join(", ");
+        	}
+        </script>
    	</body>
 </html>
 
