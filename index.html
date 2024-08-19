@@ -6,7 +6,10 @@
 			body {font-family: Calibri;}
 			table {border-collapse: collapse;}
         	.cell1 {width: 175px;}
+            .move-button {margin-left: 300px;}
             #format {display: none;}
+            #formatlabel {display: none;}
+            #aarlink {display: none;}
     	</style>
    	</head>
    	<body>
@@ -102,15 +105,17 @@
 
         <textarea id="narrative" rows="10" cols="91" placeholder="Enter the deployment narrative here..."></textarea><br><br>
       
-        <button onclick="generate()">Generate</button>
+        <button class="move-button" onclick="generate()">Generate</button>
         
-        <br><br>
+        <br>
         
+        <label id= "formatlabel" for="format"><b>CODE:</b></label>
         <textarea id="format" rows="20" cols="91" onclick="this.select();"></textarea>
-    	
-       
-        <p id="test"></p>
         
+        <br>
+        
+        <button id=aarlink class="move-button" onclick="openaarsection()">AAR Section</button>
+
         <script>
         	function generate() {
 				var starttime = document.getElementById("starttime").value;
@@ -148,7 +153,13 @@
                 
                 var textarea = document.getElementById('format');
             	textarea.style.display = 'block';
+                document.getElementById('formatlabel').style.display = 'block';
+                document.getElementById('aarlink').style.display = 'block';
 
+        	}
+            function openaarsection() {
+            // Open the link in a new tab
+            window.open('https://police.lsgov.us/viewforum.php?f=1052', '_blank');
         	}
         </script>
    	</body>
