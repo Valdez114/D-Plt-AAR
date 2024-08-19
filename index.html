@@ -6,6 +6,7 @@
 			body {font-family: Calibri;}
 			table {border-collapse: collapse;}
         	.cell1 {width: 175px;}
+            #format {display: none;}
     	</style>
    	</head>
    	<body>
@@ -20,7 +21,7 @@
         <br><br>
         
         <label for="area"><b>AREA:</b></label>
-        <input type="text" id="area">
+        <input type="text" id="area" placeholder="Street, Area">
         
         <br>
         
@@ -57,7 +58,7 @@
         			<label for="26D">Daniel White</label></td>
                 </tr><tr>
                 </tr><tr>
-        			<td class="cell1"><input type="checkbox" id="27D" name="personnel" value="[*] Devin Hwang">
+        			<td class="cell1"><input type="checkbox" id="27D" name="personnel" value="[*] D. Hwang">
         			<label for="27D">Devin Hwang</label></td>
         			<td class="cell1"><input type="checkbox" id="28D" name="personnel" value="[*] P. Hoyt">
         			<label for="28D">Preston Hoyt</label></td>
@@ -87,9 +88,9 @@
         			<label for="43D">Brett Roland</label></td>
                 </tr><tr>
                 </tr><tr>
-        			<td class="cell1"><input type="checkbox" id="44D" name="personnel" value="[*] Liam Fletcher">
+        			<td class="cell1"><input type="checkbox" id="44D" name="personnel" value="[*] L. Fletcher">
         			<label for="44D">Liam Fletcher</label></td>
-        			<td class="cell1"><input type="checkbox" id="45D" name="personnel" value="[*] Ari Kuczynski">
+        			<td class="cell1"><input type="checkbox" id="45D" name="personnel" value="[*] A. Kuczynski">
         			<label for="45D">Ari Kuczynski</label></td>
                 </tr>
         	</tbody>
@@ -105,10 +106,9 @@
         
         <br><br>
         
-        <textarea rows="4" cols="91" onclick="this.select();">format
-    	</textarea>
+        <textarea id="format" rows="20" cols="91" onclick="this.select();"></textarea>
     	
-        <p id="format"></p>
+       
         <p id="test"></p>
         
         <script>
@@ -118,32 +118,38 @@
                 var area = document.getElementById("area").value;
                 var narrative = document.getElementById("narrative").value;
                 
-                document.getElementById("format").innerHTML = "[font=Public Sans][center][size=95][b]D PLATOON – AFTER ACTION REPORT[/b][/size]";
-
-                
-                
-                
-                // starttime + " " + endtime + " " + area + " "+ narrative;
-                
-            	// Get all checkboxes
-            	var checkboxes = document.querySelectorAll('input[type="checkbox"]');
+                var checkboxes = document.querySelectorAll('input[type="checkbox"]');
             	var selectedPersonnel = [];
-
-            	// Loop through checkboxes and check if they are selected
-            	checkboxes.forEach(function(checkbox) {
-                if (checkbox.checked) {
-                    selectedPersonnel.push(checkbox.value);
+                
+                checkboxes.forEach(function(checkbox) {
+                	if (checkbox.checked) {
+                    	selectedPersonnel.push(checkbox.value);
                 	}
             	});
-
-            	// Display the selected personnel
-            	var resultDiv = document.getElementById('test');
-				resultDiv.innerHTML = selectedPersonnel.join(" ");
                 
+                var personnel = selectedPersonnel.join(" ");
+                
+                document.getElementById("format").value = 
+                "[font=Public Sans][center][size=95][b]D PLATOON – AFTER ACTION REPORT[/b][/size]\n" +
+                "METROPOLITAN DIVISION[/center][list=none]\n" +
+                "\n" +
+                "[b]START AND END TIME:[/b]\n" +
+                "[list=none]" + starttime + " - " + endtime + "\n" +
+                "\n" +
+                "[/list][b]AREA OF OPERATION:[/b]\n" +
+				"[list=none]" + area + "\n" +
+                "\n" +
+                "[/list][b]PERSONNEL:[/b]\n" +
+				"[list]" + personnel + "\n" +
+				"\n" +
+                "[/list][b]DEPLOYMENT NARRATIVE[/b]"+ "\n" +
+				"[list=none]" + narrative + "\n" +
+				"[/list][/font]";
+                
+                var textarea = document.getElementById('format');
+            	textarea.style.display = 'block';
 
         	}
         </script>
    	</body>
 </html>
-
-
