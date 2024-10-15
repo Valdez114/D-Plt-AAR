@@ -3,172 +3,126 @@
 	<head>
 		<title>D Platoon AAR Generator</title>
 		<link rel="icon" href="favicon-32x32.png" type="image/png">
-        <style>
+        	<style>
 			body {font-family: Calibri;}
 			table {border-collapse: collapse;}
-        	.cell1 {width: 175px;}
-            .move-button {margin-left: 300px;}
-            #format {display: none;}
-            #formatlabel {display: none;}
-            #aarlink {display: none;}
-    	</style>
+        		.cell1 {width: 175px;}
+            	.move-button {margin-left: 300px;}
+            	#format {display: none;}
+            	#formatlabel {display: none;}
+            	#aarlink {display: none;}
+    		</style>
    	</head>
    	<body>
-   		<label for="starttime"><b>START TIME:</b></label>
-        <input type="time" id="starttime">
-    	
-        <br><br>
-        
- 		<label for="endtime"><b>END TIME:</b></label>
-        <input type="time" id="endtime">
-        
-        <br><br>
-        
-        <label for="area"><b>AREA:</b></label>
-        <input type="text" id="area" placeholder="Street, Area">
-        
-        <br><br>
-        
-        <b>PERSONNEL:</b>
-        <br>
-        <span style="font-size: 14px"><u>COMMAND:</u></span>
-        <table>
-            <tbody>
-                <tr>
-                    <td class="cell1"><input type="checkbox" id="10D" name="personnel" value="[*] J. Valdez">
-        			<label for="10D">Jake Valdez</label></td>
-        			<td class="cell1"><input type="checkbox" id="11D" name="personnel" value="[*] A. Vega">
-        			<label for="11D">Alejandro Vega</label></td>
-        			<td class="cell1"><input type="checkbox" id="20D" name="personnel" value="[*] R. Lugo">
-        			<label for="20D">Raymond Lugo</label></td>
-       	 			<td class="cell1"><input type="checkbox" id="30D" name="personnel" value="[*] M. Greer">
-        			<label for="30D">Maurice Greer</label></td>
-                </tr><tr>
-        			<td class="cell1"><input type="checkbox" id="40D" name="personnel" value="[*] R. Spear">
-        			<label for="40D">Richard Spear</label></td>
-        			<td class="cell1"><input type="checkbox" id="41D" name="personnel" value="[*] I. Gilbert">
-        			<label for="41D">Isaac Gilbert</label></td>
-        			<td class="cell1"><input type="checkbox" id="42D" name="personnel" value="[*] J. Kaminski">
-        			<label for="42D">Joel Kaminski</label></td>
-                </tr>
-        	</tbody>
-        </table>
-        
-        <br>
-        
-        <span style="font-size: 14px"><u>SWAT OFFICERS:</u></span>
-        <table>
-            <tbody>
+   		<label for="starttime"><b>START TIME:</b></label> <input type="time" id="starttime">
+        	<br><br>
+ 		<label for="endtime"><b>END TIME:</b></label> <input type="time" id="endtime">
+        	<br><br>
+        	<label for="area"><b>AREA:</b></label> <input type="text" id="area" placeholder="Street, Area">
+        	<br><br>
+        	<b>PERSONNEL:</b>
+        	<br>
+        	<span style="font-size: 14px"><u>COMMAND:</u></span>
+        	<table>
+        		<tbody>
+                		<tr>
+                    			<td class="cell1"><input type="checkbox" id="10D" name="personnel" value="[*] J. Valdez"> <label for="10D">Jake Valdez</label></td>
+        				<td class="cell1"><input type="checkbox" id="11D" name="personnel" value="[*] R. Lugo"> <label for="11D">Raymond Lugo</label></td>
+        				<td class="cell1"><input type="checkbox" id="20D" name="personnel" value="[*] A. Vega"> <label for="20D">Alejandro Vega</label></td>
+       	 				<td class="cell1"><input type="checkbox" id="30D" name="personnel" value="[*] M. Greer"> <label for="30D">Maurice Greer</label></td>
+                		</tr><tr>
+        				<td class="cell1"><input type="checkbox" id="40D" name="personnel" value="[*] R. Spear"> <label for="40D">Richard Spear</label></td>
+        				<td class="cell1"><input type="checkbox" id="41D" name="personnel" value="[*] I. Gilbert"> <label for="41D">Isaac Gilbert</label></td>
+        				<td class="cell1"><input type="checkbox" id="42D" name="personnel" value="[*] J. Kaminski"> <label for="42D">Joel Kaminski</label></td>
+                		</tr>
+        		</tbody>
+       		</table>
+        	<br>
+        	<span style="font-size: 14px"><u>SWAT OFFICERS:</u></span>
+        	<table>
+            		<tbody>
 				<tr>
-        			<td class="cell1"><input type="checkbox" id="22D" name="personnel" value="[*] J. Cubero">
-        			<label for="22D">Jose Cubero</label></td>
-        			<td class="cell1"><input type="checkbox" id="23D" name="personnel" value="[*] J. Pittman">
-        			<label for="23D">Julius Pittman</label></td>
-        			<td class="cell1"><input type="checkbox" id="24D" name="personnel" value="[*] R. Quinn">
-        			<label for="24D">Ronan Quinn</label></td>
-        			<td class="cell1"><input type="checkbox" id="25D" name="personnel" value="[*] P. Wilson">
-        			<label for="25D">Perry Wilson</label></td>
-                </tr><tr>
-                </tr><tr>
-                    <td class="cell1"><input type="checkbox" id="26D" name="personnel" value="[*] D. White">
-        			<label for="26D">Daniel White</label></td>
-        			<td class="cell1"><input type="checkbox" id="27D" name="personnel" value="[*] D. Hwang">
-        			<label for="27D">Devin Hwang</label></td>
-        			<td class="cell1"><input type="checkbox" id="28D" name="personnel" value="[*] P. Hoyt">
-        			<label for="28D">Preston Hoyt</label></td>
-        			<td class="cell1"><input type="checkbox" id="29D" name="personnel" value="[*] J. Gibson">
-        			<label for="29D">Jayden Gibson</label></td>
-                </tr><tr>
-               	</tr><tr>                    
-                    <td class="cell1"><input type="checkbox" id="32D" name="personnel" value="[*] B. Townsend">
-        			<label for="32D">Bo Townsend</label></td>
-        			<td class="cell1"><input type="checkbox" id="33D" name="personnel" value="[*] J. Salvador">
-        			<label for="33D">Joseph Salvador</label></td>
-        			<td class="cell1"><input type="checkbox" id="34D" name="personnel" value="[*] V. Beckett">
-        			<label for="34D">Victor Beckett</label></td>
-                    <td class="cell1"><input type="checkbox" id="36D" name="personnel" value="[*] A. Markatos">
-        			<label for="36D">Alexander Markatos</label></td>
-                </tr><tr>
-                </tr><tr>
-        			<td class="cell1"><input type="checkbox" id="37D" name="personnel" value="[*] L. Jarecki">
-        			<label for="37D">Lewis Jarecki</label></td>
-        			<td class="cell1"><input type="checkbox" id="38D" name="personnel" value="[*] E. Murray">
-        			<label for="38D">Eric Murray</label></td>
-        			<td class="cell1"><input type="checkbox" id="39D" name="personnel" value="[*] J. Verica">
-        			<label for="39D">Joseph Verica</label></td>
-                    <td class="cell1"><input type="checkbox" id="43D" name="personnel" value="[*] B. Roland">
-        			<label for="43D">Brett Roland</label></td>
-                </tr><tr>
-                </tr><tr>
-        			<td class="cell1"><input type="checkbox" id="44D" name="personnel" value="[*] L. Fletcher">
-        			<label for="44D">Liam Fletcher</label></td>
-        			<td class="cell1"><input type="checkbox" id="45D" name="personnel" value="[*] A. Kuczynski">
-        			<label for="45D">Ari Kuczynski</label></td>
-                </tr>
-        	</tbody>
-        </table>
-
-        <br>
-        
-        <label for="narrative"><b>NARRATIVE:</b></label><br>
-
-        <textarea id="narrative" rows="10" cols="91" placeholder="Enter the deployment narrative here..."></textarea><br><br>
-      
-        <button class="move-button" onclick="generate()">Generate</button>
-        
-        <br>
-        
-        <label id= "formatlabel" for="format"><b>CODE:</b></label>
-        <textarea id="format" rows="20" cols="91" onclick="this.select();"></textarea>
-        
-        <br>
-        
-        <button id=aarlink class="move-button" onclick="openaarsection()">AAR Section</button>
-
-        <script>
-        	function generate() {
+					<td class="cell1"><input type="checkbox" id="Op1" name="personnel" value="[*] T. Bates"> <label for="Op1">Travis Bates</label></td>
+					<td class="cell1"><input type="checkbox" id="Op2" name="personnel" value="[*] V. Beckett"> <label for="Op2">Victor Beckett</label></td>
+					<td class="cell1"><input type="checkbox" id="Op3" name="personnel" value="[*] J. Cubero"> <label for="Op3">Jose Cubero</label></td>
+					<td class="cell1"><input type="checkbox" id="Op4" name="personnel" value="[*] L. Fletcher"> <label for="Op4">Liam Fletcher</label></td>
+                		</tr><tr>
+                		</tr><tr>
+					<td class="cell1"><input type="checkbox" id="Op5" name="personnel" value="[*] J. Gibson"> <label for="Op5">Jayden Gibson</label></td>
+					<td class="cell1"><input type="checkbox" id="Op6" name="personnel" value="[*] P. Hoyt"> <label for="Op6">Preston Hoyt</label></td>
+					<td class="cell1"><input type="checkbox" id="Op7" name="personnel" value="[*] D. Hwang"> <label for="Op7">Devin Hwang</label></td>
+					<td class="cell1"><input type="checkbox" id="Op8" name="personnel" value="[*] L. Jarecki"> <label for="Op8">Lewis Jarecki</label></td>
+				</tr><tr>
+                		</tr><tr>
+					<td class="cell1"><input type="checkbox" id="Op9" name="personnel" value="[*] A. Kuczynski"> <label for="Op9">Ari Kuczynski</label></td>
+					<td class="cell1"><input type="checkbox" id="Op10" name="personnel" value="[*] A. Markatos"> <label for="Op10">Alexander Markatos</label></td>
+					<td class="cell1"><input type="checkbox" id="Op11" name="personnel" value="[*] J. Pittman"> <label for="Op11">Julius Pittman</label></td>
+					<td class="cell1"><input type="checkbox" id="Op12" name="personnel" value="[*] R. Quinn"> <label for="Op12">Ronan Quinn</label></td>
+				</tr><tr>
+                		</tr><tr>
+					<td class="cell1"><input type="checkbox" id="Op13" name="personnel" value="[*] B. Roland"> <label for="Op13">Brett Roland</label></td>
+					<td class="cell1"><input type="checkbox" id="Op14" name="personnel" value="[*] J. Salvador"> <label for="Op14">Joseph Salvador</label></td>
+					<td class="cell1"><input type="checkbox" id="Op15" name="personnel" value="[*] B. Townsend"> <label for="Op15">Bo Townsend</label></td>
+					<td class="cell1"><input type="checkbox" id="Op16" name="personnel" value="[*] J. Verica"> <label for="Op16">Joseph Verica</label></td>
+				</tr><tr>
+                		</tr><tr>
+					<td class="cell1"><input type="checkbox" id="Op17" name="personnel" value="[*] M. Riveria"> <label for="Op17">Michael Riveria</label></td>
+					<td class="cell1"><input type="checkbox" id="Op18" name="personnel" value="[*] D. White"> <label for="Op18">Daniel White</label></td>
+					<td class="cell1"><input type="checkbox" id="Op19" name="personnel" value="[*] P. Wilson"> <label for="Op19">Perry Wilson</label></td>
+                		</tr>
+        		</tbody>
+        	</table>
+        	<br>
+        	<label for="narrative"><b>NARRATIVE:</b></label>
+		<br>
+		<textarea id="narrative" rows="10" cols="91" placeholder="Enter the deployment narrative here..."></textarea><br><br>
+        	<button class="move-button" onclick="generate()">Generate</button>
+        	<br>
+        	<label id= "formatlabel" for="format"><b>CODE:</b></label> <textarea id="format" rows="20" cols="91" onclick="this.select();"></textarea>
+        	<br>
+        	<button id=aarlink class="move-button" onclick="openaarsection()">AAR Section</button>
+        	<script>
+        		function generate() {
 				var starttime = document.getElementById("starttime").value;
-                var endtime = document.getElementById("endtime").value;
-                var area = document.getElementById("area").value;
-                var narrative = document.getElementById("narrative").value;
+                		var endtime = document.getElementById("endtime").value;
+                		var area = document.getElementById("area").value;
+                		var narrative = document.getElementById("narrative").value;
+                		var checkboxes = document.querySelectorAll('input[type="checkbox"]');
+            			var selectedPersonnel = [];
+                		checkboxes.forEach(function(checkbox) {
+                			if (checkbox.checked) {
+                    			selectedPersonnel.push(checkbox.value);
+                			}
+            			});
                 
-                var checkboxes = document.querySelectorAll('input[type="checkbox"]');
-            	var selectedPersonnel = [];
+                		var personnel = selectedPersonnel.join(" ");
                 
-                checkboxes.forEach(function(checkbox) {
-                	if (checkbox.checked) {
-                    	selectedPersonnel.push(checkbox.value);
-                	}
-            	});
-                
-                var personnel = selectedPersonnel.join(" ");
-                
-                document.getElementById("format").value = 
-                "[font=Public Sans][center][size=95][b]D PLATOON – AFTER ACTION REPORT[/b][/size]\n" +
-                "METROPOLITAN DIVISION[/center][list=none]\n" +
-                "\n" +
-                "[b]START AND END TIME:[/b]\n" +
-                "[list=none]" + starttime + " - " + endtime + "\n" +
-                "\n" +
-                "[/list][b]AREA OF OPERATION:[/b]\n" +
+                		document.getElementById("format").value = 
+                		"[font=Public Sans][center][size=95][b]D PLATOON – AFTER ACTION REPORT[/b][/size]\n" +
+                		"METROPOLITAN DIVISION[/center][list=none]\n" +
+               			"\n" +
+                		"[b]START AND END TIME:[/b]\n" +
+                		"[list=none]" + starttime + " - " + endtime + "\n" +
+                		"\n" +
+                		"[/list][b]AREA OF OPERATION:[/b]\n" +
 				"[list=none]" + area + "\n" +
-                "\n" +
-                "[/list][b]PERSONNEL:[/b]\n" +
+                		"\n" +
+                		"[/list][b]PERSONNEL:[/b]\n" +
 				"[list]" + personnel + "\n" +
 				"\n" +
-                "[/list][b]DEPLOYMENT NARRATIVE[/b]"+ "\n" +
+                		"[/list][b]DEPLOYMENT NARRATIVE[/b]"+ "\n" +
 				"[list=none]" + narrative + "\n" +
 				"[/list][/font]";
                 
-                var textarea = document.getElementById('format');
-            	textarea.style.display = 'block';
-                document.getElementById('formatlabel').style.display = 'block';
-                document.getElementById('aarlink').style.display = 'block';
+                		var textarea = document.getElementById('format');
+            			textarea.style.display = 'block';
+                		document.getElementById('formatlabel').style.display = 'block';
+                		document.getElementById('aarlink').style.display = 'block';
 
-        	}
-            function openaarsection() {
-            window.open('https://police.lsgov.us/viewforum.php?f=1052', '_blank');
-        	}
-        </script>
+        		}
+            		function openaarsection() {
+           			window.open('https://police.lsgov.us/viewforum.php?f=1052', '_blank');
+        		}
+        	</script>
    	</body>
 </html>
